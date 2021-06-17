@@ -831,6 +831,7 @@ func (s *webhookService) convertPullRequestCommentHook(src *webhookPRComment) (*
 			},
 			Created: src.PullRequest.CreatedOn,
 			Updated: src.PullRequest.UpdatedOn,
+			State:   strings.ToLower(src.PullRequest.State),
 		},
 		Repo: prRepo,
 		Sender: scm.User{
@@ -842,7 +843,8 @@ func (s *webhookService) convertPullRequestCommentHook(src *webhookPRComment) (*
 			ID:   src.Comment.ID,
 			Body: src.Comment.Content.Raw,
 			Author: scm.User{
-				Login:  src.Comment.User.DisplayName,
+				Login:  src.Comment.User.AccountID,
+				Name:   src.Comment.User.DisplayName,
 				Avatar: src.Comment.User.Links.Avatar.Href,
 			},
 			Created: src.Comment.CreatedOn,
