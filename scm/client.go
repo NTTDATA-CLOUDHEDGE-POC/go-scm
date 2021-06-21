@@ -7,7 +7,7 @@ package scm
 import (
 	"context"
 	"errors"
-
+	"fmt"
 	"io"
 	"net/http"
 
@@ -174,6 +174,12 @@ func (c *Client) Do(ctx context.Context, in *Request) (*Response, error) {
 	if in.Header != nil {
 		req.Header = in.Header
 	}
+	fmt.Printf("%+v\n", req.Header)
+	// workaround - override with Basic Auth
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Authorization", "Basic RGlzaGFEdWRoYWw6Qml0YnVja2V0QDEyMw==")
+	fmt.Printf("=======================After setting authorization in header=======================================")
+	fmt.Printf("%+v\n", req.Header)
 
 	// use the default client if none provided.
 	client := c.Client
