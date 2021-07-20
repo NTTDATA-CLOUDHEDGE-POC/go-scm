@@ -6,8 +6,8 @@
     "Labels": null,
     "Sha": "42f383c381d9",
     "Ref": "refs/pull-requests/2/from",
-    "Source": "42f383c381d9",
-    "Target": "ec8d3da80fc5",
+    "Source": "somestuff",
+    "Target": "master",
     "Base": {
       "Ref": "master",
       "Sha": "ec8d3da80fc5",
@@ -83,8 +83,8 @@
     "Labels": null,
     "Sha": "bf9b796a1dd0",
     "Ref": "refs/pull-requests/1/from",
-    "Source": "bf9b796a1dd0",
-    "Target": "ec8d3da80fc5",
+    "Source": "cheese",
+    "Target": "master",
     "Base": {
       "Ref": "master",
       "Sha": "ec8d3da80fc5",
